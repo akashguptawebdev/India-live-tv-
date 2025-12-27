@@ -1,0 +1,217 @@
+/* --- Sidebar Header --- */
+.sidebar-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  /* flex-wrap: wrap; */
+}
+
+/* Search + Close wrapper */
+.search-close-wrapper {
+  display: flex;
+  flex: 1;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Search Input */
+.search-input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  min-width: 150px;
+}
+
+/* Funnel Button */
+.filter-btn {
+  background: #222;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #00c6ff;
+  color: #000;
+}
+
+.close-btn-hamburger{
+  background-color: transparent;
+  border: none;
+  color: rgb(206, 60, 60);
+}
+
+/* Popover */
+.filter-popover {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #0f2027;
+  border-radius: 10px;
+  padding: 12px;
+  z-index: 20;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  width: 220px;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Popover close X */
+.popover-close {
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.popover-close:hover {
+  transform: rotate(90deg);
+  color: #00c6ff;
+}
+
+/* Filter Header */
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Section */
+.filter-section {
+  margin-bottom: 12px;
+}
+
+.filter-section p {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #aaa;
+}
+
+/* Chips */
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-chip {
+  padding: 6px 10px;
+  border-radius: 16px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.filter-chip.active {
+  background: #00c6ff;
+  color: #000;
+  border-color: #00c6ff;
+}
+
+.filter-chip:hover {
+  background: rgba(0,198,255,0.2);
+}
+
+/* Actions */
+.filter-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.filter-actions button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-actions .clear {
+  background: #333;
+  color: #fff;
+}
+
+.filter-actions .clear:hover {
+  background: #555;
+}
+
+.filter-actions .apply {
+  background: #00c6ff;
+  color: #000;
+}
+
+.filter-actions .apply:hover {
+  background: #00e0ff;
+}
+
+/* ------------------- MOBILE RESPONSIVENESS ------------------- */
+@media (max-width: 600px) {
+  .sidebar-header {
+    gap: 4px;
+  
+  }
+
+  .search-input {
+    font-size: 12px;
+    padding: 6px 8px;
+    width: 50%;
+    min-width: 100px;
+  }
+
+  .filter-btn {
+    padding: 6px;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .filter-popover {
+    right: auto;
+    left: 0;
+    width: 95%;
+    max-width: 300px;
+  }
+
+  .filter-chip {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .filter-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .filter-actions button {
+    width: 100%;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

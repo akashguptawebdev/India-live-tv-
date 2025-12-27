@@ -1,0 +1,167 @@
+/* ===== Base (Desktop) ===== */
+.sidebar {
+  height: 100vh;
+  background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 16px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: relative;
+  transition: width 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  padding-top: 2rem;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Channel List */
+.channel-list {
+  overflow-y: auto;
+  height: calc(100vh - 120px);
+  overscroll-behavior: contain;
+}
+
+/* Scrollbar */
+.channel-list::-webkit-scrollbar {
+  width: 6px;
+}
+.channel-list::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+/* Channel Item */
+.channel-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.channel-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+.channel-item.active {
+  background: #00c6ff;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Channel Logo */
+.channel-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #fff;
+}
+
+/* Channel Name */
+.channel-name {
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Drag handle */
+.resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 100%;
+  cursor: ew-resize;
+  background: transparent;
+}
+
+.resize-handle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== Tablet (<= 900px) ===== */
+@media (max-width: 900px) {
+  .sidebar {
+    padding: 12px;
+  }
+
+  .channel-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .channel-name {
+    font-size: 14px;
+  }
+}
+
+/* ===== Mobile (<= 600px) ===== */
+@media (max-width: 600px) {
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100px; /* collapsed width */
+    height: 90vh;
+    z-index: 1000;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .channel-item {
+    padding: 12px;
+  }
+
+  .channel-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+}
+
+/* ===== Sidebar Overlay for Mobile ===== */
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+/* ===== Collapsed Sidebar for Desktop (Hover Expand) ===== */
+.sidebar.collapsed {
+  width: 100px;
+}
+
+.sidebar.expanded {
+  width: 280px;
+}
+
+.sidebar.collapsed .channel-name {
+  display: none;
+}
+
+.sidebar.expanded .channel-name {
+  display: block;
+}

@@ -1,0 +1,140 @@
+/* ===== Layout ===== */
+.app-layout {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background: #0e0e0e; */
+  color: #fff;
+}
+
+.app-content {
+  flex: 1;
+  padding-top:70px;
+}
+
+/* ===== Header ===== */
+.app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1200;
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #222;
+}
+
+.header-inner {
+  max-width: 87rem;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #00c6ff;
+}
+
+/* Desktop Nav */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links p {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: #00c6ff;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  display: none;
+}
+
+/* ===== Footer ===== */
+.app-footer {
+  background: #0a0a0a;
+  border-top: 1px solid #222;
+}
+
+.footer-inner {
+  max-width: 1300px;
+  margin: auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+.footer-links a:hover {
+  color: #00c6ff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    background: #111;
+    border-top: 1px solid #222;
+  }
+
+  .mobile-nav p {
+    padding: 10px 0;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
